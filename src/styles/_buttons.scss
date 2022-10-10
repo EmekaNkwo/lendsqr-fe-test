@@ -1,0 +1,22 @@
+@import "./colors";
+
+@mixin buttonStyle {
+  width: 100%;
+  border-radius: 4px;
+  height: 45px;
+  outline: #5d637226;
+  cursor: pointer;
+}
+
+@mixin LoginButtonStyle {
+  @include buttonStyle();
+  border: none;
+  background-color: $secondary_color;
+  color: $white_color;
+  border-radius: 4px;
+}
+
+@mixin OutlineButtonStyle {
+  @include buttonStyle();
+  background-color: transparent;
+}

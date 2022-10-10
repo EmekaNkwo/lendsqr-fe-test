@@ -1,0 +1,29 @@
+@mixin size42LoginStyle {
+  font-weight: 700;
+  font-size: 42px;
+}
+
+@mixin size14LoginStyle {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+@mixin size24HeaderStyle {
+  font-weight: 600;
+  font-size: 24px;
+}
+
+@mixin size22HeaderStyle {
+  font-weight: 500;
+  font-size: 22px;
+}
+
+@mixin size16TextSize {
+  font-weight: 400;
+  font-size: 16px;
+}
+
+@mixin size12TextStyle {
+  font-weight: 400;
+  font-size: 12px;
+}
