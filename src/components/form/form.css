@@ -9,6 +9,11 @@
   font-weight: 700;
   font-size: 42px;
 }
+@media only screen and (max-width: 1200px) {
+  .form h1 {
+    margin: 0.5rem auto;
+  }
+}
 .form span {
   font-weight: 600;
   font-size: 14px;
