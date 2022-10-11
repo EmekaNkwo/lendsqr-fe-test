@@ -9,7 +9,7 @@
   font-weight: 700;
   font-size: 42px;
 }
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 1600px) {
   .form h1 {
     margin: 0.5rem auto;
   }

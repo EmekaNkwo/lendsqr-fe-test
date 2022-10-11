@@ -11,7 +11,7 @@
   h1 {
     color: $header_color;
     @include size42LoginStyle;
-    @media only screen and (max-width: 1200px) {
+    @media only screen and (max-width: 1600px) {
       margin: 0.5rem auto;
     }
   }
