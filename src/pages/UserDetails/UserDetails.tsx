@@ -33,7 +33,10 @@ export default function UserDetails() {
             <div className="user_details">
               <div className="profile_details">
                 <div className="user_profile">
-                  <img src="" alt={user?.userName} />
+                  <img
+                    src={user?.profile.avatar}
+                    alt={user?.profile.firstName}
+                  />
                 </div>
                 <div className="user_info">
                   <span className="user_name">
@@ -168,7 +171,9 @@ export default function UserDetails() {
                   <div className="row_details">
                     <span className="row_header">MONTHLY INCOME</span>
                     <span className="row_text">
+                      {user?.profile.currency}
                       {user?.education.monthlyIncome[0]} -
+                      {user?.profile.currency}
                       {user?.education.monthlyIncome[1]}
                     </span>
                   </div>
