@@ -174,16 +174,6 @@ export default function User() {
           </div>
 
           <table>
-            {/* <div
-                className="action_menu"
-                style={{
-                  display: actionDropDown ? "flex" : "none",
-                }}
-              >
-                <Link to={`user/${data.id}`}>View </Link>
-                <a href="#!"> Blacklist user</a>
-                <a href="#!"> Activate User</a>
-              </div> */}
             <thead>
               <tr>
                 <th>
@@ -262,17 +252,6 @@ export default function User() {
                       <Link to={`${user.id}`}>
                         <button className="view_user">View User</button>
                       </Link>
-                    </td>
-                    <td>
-                      {/* <button
-                          onClick={() => {
-                            actionDropDown
-                              ? setActionDropDown(false)
-                              : setActionDropDown(true);
-                          }}
-                        >
-                          :
-                        </button> */}
                     </td>
                   </tr>
                 );
