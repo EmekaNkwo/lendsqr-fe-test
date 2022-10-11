@@ -1,4 +1,3 @@
-import React from "react";
 import { Sidebar, Topbar } from "../../components";
 import { Outlet } from "react-router-dom";
 import "./main.css";

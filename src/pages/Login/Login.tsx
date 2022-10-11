@@ -1,4 +1,3 @@
-import React from "react";
 import { Logo, Login_Img } from "../../assets";
 import { Form } from "../../components";
 import "./login.css";

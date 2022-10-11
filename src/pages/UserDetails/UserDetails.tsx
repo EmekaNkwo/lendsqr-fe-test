@@ -1,4 +1,3 @@
-import React from "react";
 import { BsStar, BsStarFill } from "react-icons/bs";
 import { Link, useParams } from "react-router-dom";
 import { back } from "../../assets";
