@@ -7,7 +7,6 @@ export default function Form() {
   const [pwd, setPwd] = useState("");
 
   const [errorMesg, setErrorMesg] = useState("");
-  const [success, setSuccess] = useState(false);
   const [passwordShown, setPasswordShown] = useState(false);
 
   const togglePassword = () => {
@@ -21,7 +20,6 @@ export default function Form() {
       setErrorMesg("Please fill in all fields");
     }
     if (email === "admin@example.com" && pwd === "admin") {
-      setSuccess(true);
       navigate("/dashboard");
     }
     return setErrorMesg("Invalid username or password");
@@ -33,6 +31,7 @@ export default function Form() {
   return (
     <>
       <strong
+        data-testid="error"
         aria-live="assertive"
         className={errorMesg ? "warning" : "offscreen"}
       >
@@ -43,7 +42,6 @@ export default function Form() {
         <span>Enter details to login</span>
         <form action="" className="form_container" onSubmit={handleLogin}>
           <div className="email">
-            {" "}
             <input
               type="text"
               value={email}
