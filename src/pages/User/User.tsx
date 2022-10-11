@@ -8,7 +8,7 @@ import {
   users_loans,
   users_savings,
 } from "../../assets";
-import { Card } from "../../components";
+import { Card, LoadingSpinner } from "../../components";
 import { useGetUsersQuery } from "../../services/fetchUsers";
 import "./user.css";
 
@@ -41,12 +41,12 @@ export default function User() {
   const { data: usersList, isFetching } = useGetUsersQuery(count);
 
   const [users, setUsers] = useState([]);
-  const [error, setError] = useState(false);
+
   useEffect(() => {
     try {
       setUsers(usersList);
     } catch (err: any) {
-      setError(err);
+      console.log(err);
     }
   }, [usersList]);
 
@@ -82,7 +82,7 @@ export default function User() {
     accountNumber: string;
     // loanRepayment: number;
   }
-  if (isFetching) return <h1>Loading...</h1>;
+  if (isFetching) return <LoadingSpinner />;
 
   return (
     <>

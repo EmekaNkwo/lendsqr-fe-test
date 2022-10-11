@@ -1,0 +1,33 @@
+.spinner_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 350px;
+}
+.spinner_container .loading_spinner {
+  width: 60px;
+  height: 60px;
+  border: 10px solid #f3f3f3;
+  border-top: 10px solid #39cdcc;
+  border-radius: 50%;
+  -webkit-animation: spinner 1s linear infinite;
+          animation: spinner 1s linear infinite;
+}
+
+@-webkit-keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}/*# sourceMappingURL=spinner.css.map */

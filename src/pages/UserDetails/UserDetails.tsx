@@ -2,6 +2,7 @@ import React from "react";
 import { BsStar, BsStarFill } from "react-icons/bs";
 import { Link, useParams } from "react-router-dom";
 import { back } from "../../assets";
+import { LoadingSpinner } from "../../components";
 
 import { useGetUserDetailsQuery } from "../../services/fetchUsers";
 import "./userDetails.css";
@@ -14,7 +15,7 @@ export default function UserDetails() {
   return (
     <div>
       {isFetching ? (
-        "Loading"
+        <LoadingSpinner />
       ) : (
         <>
           <div className="user_container">
