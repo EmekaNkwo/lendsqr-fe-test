@@ -23,7 +23,7 @@ import {
 } from "../../assets";
 
 export const TopItem = [
-  { header: "", name: "Dashboard", icon: home, link: "dashboard" },
+  { header: "", name: "Dashboard", icon: home, link: "" },
 ];
 
 export const CustomerItems = [
