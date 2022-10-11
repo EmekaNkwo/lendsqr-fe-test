@@ -12,8 +12,6 @@ import { Card } from "../../components";
 import { useGetUsersQuery } from "../../services/fetchUsers";
 import "./user.css";
 
-// import useFetch from "../../hooks/useFetch";
-
 export default function User() {
   const userHeader = [
     {
