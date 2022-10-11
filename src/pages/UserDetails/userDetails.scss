@@ -14,9 +14,28 @@
     .detail_control {
       display: flex;
       justify-content: space-between;
+
+      h1 {
+        color: #213f7d;
+      }
       .detail_buttons {
         display: flex;
         gap: 1rem;
+
+        button {
+          padding: 0.5rem;
+          background-color: transparent;
+          border-radius: 8px;
+        }
+
+        .blacklist {
+          color: #e40338;
+          border: 2px solid #e40338;
+        }
+        .activate {
+          color: #39cdcc;
+          border: 2px solid #39cdcc;
+        }
       }
     }
   }

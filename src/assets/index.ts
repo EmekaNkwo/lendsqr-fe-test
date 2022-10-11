@@ -24,7 +24,7 @@ export { default as transactions } from "./images/transactions.png";
 export { default as user_friend } from "./images/user_friends.png";
 export { default as users_loans } from "./images/users_loans.png";
 export { default as users_savings } from "./images/users_savings.png";
-export { default as users } from "./images/users.png";
+export { default as all_users } from "./images/all_users.png";
 export { default as whitelist } from "./images/whitelist.png";
 export { default as briefcase } from "./images/briefcase.png";
 export { default as home } from "./images/home.png";

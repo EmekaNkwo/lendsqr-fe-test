@@ -6,16 +6,35 @@
   gap: 2rem;
   flex-direction: column;
 }
-.user_container .user_title {
-  font-weight: 500;
-  font-size: 24px;
+.user_container h1 {
+  color: #213f7d;
 }
 .user_container .user_headers {
   display: flex;
   gap: 1.4rem;
 }
+@media only screen and (max-width: 1024px) {
+  .user_container .user_headers {
+    flex-wrap: wrap;
+    gap: 0.8rem;
+  }
+}
 .user_container .users_table {
   position: relative;
+}
+.user_container .users_table .view_user {
+  padding: 0.5rem;
+  background-color: #39cdcc;
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 4px;
+}
+@media only screen and (max-width: 768px) {
+  .user_container .users_table {
+    width: 600px;
+    overflow: auto;
+  }
 }
 .user_container .users_table .table_drop {
   cursor: pointer;
@@ -29,7 +48,8 @@
   top: 8.1%;
   height: 518px;
   padding: 1rem;
-  background-color: rgb(198, 198, 198);
+  border: 1px solid rgba(84, 95, 125, 0.1411764706);
+  background-color: #fff;
 }
 .user_container .users_table .header_drop_menu .input_group {
   display: flex;
@@ -39,6 +59,7 @@
 .user_container .users_table .header_drop_menu .input_group label {
   font-size: 14px;
   font-weight: 500;
+  color: #213f7d;
 }
 .user_container .users_table .header_drop_menu .input_group .input_field {
   width: 260px;
@@ -46,7 +67,7 @@
   padding: 0.5rem;
   border-radius: 8px;
   outline: none;
-  border: none;
+  border: 1px solid #213f7d;
 }
 .user_container .users_table .header_drop_menu .drop_buttons {
   display: flex;
@@ -60,6 +81,15 @@
   font-weight: 600;
   font-size: 14px;
   cursor: pointer;
+}
+.user_container .users_table .header_drop_menu .drop_buttons .filter {
+  color: #fff;
+  background-color: #39cdcc;
+}
+.user_container .users_table .header_drop_menu .drop_buttons .reset {
+  background-color: transparent;
+  border: 1px solid #545f7d;
+  color: #545f7d;
 }
 .user_container .users_table .action_menu {
   position: absolute;
@@ -81,6 +111,9 @@
   align-items: center;
   justify-content: space-between;
 }
+.user_container .users_table .table_footer .footer_left {
+  color: #213f7d;
+}
 .user_container .users_table .table_footer .footer_right .pagination ul {
   display: flex;
   list-style: none;
@@ -88,9 +121,9 @@
 }
 .user_container .users_table .table_footer .footer_right .pagination ul li {
   padding: 0.3rem;
-  background: #000;
+  background: rgba(20, 39, 77, 0.1019607843);
 }
 .user_container .users_table .table_footer .footer_right .pagination ul li a {
   text-decoration: none;
-  color: #fff;
+  color: #213f7d;
 }/*# sourceMappingURL=user.css.map */

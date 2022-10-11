@@ -28,6 +28,11 @@
   flex-direction: column;
   gap: 0.5rem;
 }
+@media only screen and (max-width: 1200px) {
+  .sidebar .links-items .links {
+    gap: 1.1rem;
+  }
+}
 .sidebar .links-items .links .link-item {
   display: flex;
   padding: 0.2rem;

@@ -1,8 +1,13 @@
 import React, { useEffect, useState } from "react";
 import Moment from "react-moment";
 import { Link } from "react-router-dom";
-import parsePhoneNumber from "libphonenumber-js";
-import { table_drop, three_dots } from "../../assets";
+import {
+  active_users,
+  all_users,
+  table_drop,
+  users_loans,
+  users_savings,
+} from "../../assets";
 import { Card } from "../../components";
 import { useGetUsersQuery } from "../../services/fetchUsers";
 import "./user.css";
@@ -13,22 +18,22 @@ export default function User() {
   const userHeader = [
     {
       title: "Users",
-      icon: "",
+      icon: all_users,
       value: 2453,
     },
     {
       title: "Active Users",
-      icon: "",
+      icon: active_users,
       value: 2453,
     },
     {
       title: "Users with Loans",
-      icon: "",
+      icon: users_loans,
       value: 12453,
     },
     {
       title: "Users with Savings",
-      icon: "",
+      icon: users_savings,
       value: 102453,
     },
   ];
@@ -163,8 +168,8 @@ export default function User() {
               </select>
             </div>
             <div className="drop_buttons">
-              <button className="drop_button">Reset</button>
-              <button className="drop_button">Filter</button>
+              <button className="drop_button reset">Reset</button>
+              <button className="drop_button filter">Filter</button>
             </div>
           </div>
 
@@ -248,11 +253,16 @@ export default function User() {
                     <td>{user.userName}</td>
                     <td>{user.email}</td>
                     <td>{user.phoneNumber}</td>
-                    {/* <td>{user.profile.phoneNumber}</td> */}
+
                     <td>
                       <Moment format="YYYY/MM/DD">{user.createdAt}</Moment>
                     </td>
 
+                    <td>
+                      <Link to={`${user.id}`}>
+                        <button className="view_user">View User</button>
+                      </Link>
+                    </td>
                     <td>
                       {/* <button
                           onClick={() => {
@@ -263,7 +273,6 @@ export default function User() {
                         >
                           :
                         </button> */}
-                      <Link to={`users/${user.id}`}>View User </Link>
                     </td>
                   </tr>
                 );
@@ -279,7 +288,7 @@ export default function User() {
               <div className="pagination">
                 <ul>
                   <li className="paginate" onClick={prevPage}>
-                    <a href="#!">Prev</a>
+                    <a href="#!">{"<"}</a>
                   </li>
                   {pageNumbers.map((number) => (
                     <li
@@ -294,7 +303,7 @@ export default function User() {
                     </li>
                   ))}
                   <li className="paginate" onClick={nextPage}>
-                    <a href="#!">Next</a>
+                    <a href="#!">{">"}</a>
                   </li>
                 </ul>
               </div>

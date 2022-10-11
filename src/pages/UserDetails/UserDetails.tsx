@@ -1,6 +1,7 @@
 import React from "react";
 import { BsStar, BsStarFill } from "react-icons/bs";
 import { Link, useParams } from "react-router-dom";
+import { back } from "../../assets";
 
 import { useGetUserDetailsQuery } from "../../services/fetchUsers";
 import "./userDetails.css";
@@ -18,12 +19,14 @@ export default function UserDetails() {
         <>
           <div className="user_container">
             <div className="detail_header">
-              <Link to="/dashboard"> Back to Users</Link>
+              <Link to="/dashboard/users">
+                <img src={back} alt="" /> Back to Users
+              </Link>
               <div className="detail_control">
                 <h1>User Details</h1>
                 <div className="detail_buttons">
-                  <button className="edit">BLACKLIST USER</button>
-                  <button className="delete">ACTIVATE USER</button>
+                  <button className="blacklist">BLACKLIST USER</button>
+                  <button className="activate">ACTIVATE USER</button>
                 </div>
               </div>
             </div>

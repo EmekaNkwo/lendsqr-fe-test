@@ -12,15 +12,15 @@ table {
   border: 1px solid #213f7d0f;
   letter-spacing: 1px;
   font-size: 0.8rem;
-
   background-color: #fff;
   width: 100%;
+  color: #545f7d;
 }
 
 td,
 th {
   border: 1px solid #213f7d0f;
-  padding: 1rem 0.1rem;
+  padding: 0.7rem 0.1rem;
 }
 
 th {

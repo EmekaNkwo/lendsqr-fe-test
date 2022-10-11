@@ -17,9 +17,25 @@
   display: flex;
   justify-content: space-between;
 }
+.user_container .detail_header .detail_control h1 {
+  color: #213f7d;
+}
 .user_container .detail_header .detail_control .detail_buttons {
   display: flex;
   gap: 1rem;
+}
+.user_container .detail_header .detail_control .detail_buttons button {
+  padding: 0.5rem;
+  background-color: transparent;
+  border-radius: 8px;
+}
+.user_container .detail_header .detail_control .detail_buttons .blacklist {
+  color: #e40338;
+  border: 2px solid #e40338;
+}
+.user_container .detail_header .detail_control .detail_buttons .activate {
+  color: #39cdcc;
+  border: 2px solid #39cdcc;
 }
 .user_container .user_details {
   background-color: #fff;

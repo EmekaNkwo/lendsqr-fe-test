@@ -17,28 +17,51 @@
       height: 42px;
       width: 350px;
       padding: 0.5rem;
-      border: none;
+      border: 1px solid #213f7d;
+      border-right: none;
       outline: none;
-      background-color: grey;
+      border-radius: 8px 0 0 8px;
+      background-color: #ffffff;
 
       &::placeholder {
-        color: #fff;
+        color: #545f7d;
       }
     }
 
     .search_icon {
       padding: 0.7rem;
-      background-color: black;
+      background-color: #39cdcc;
+      border-radius: 0 8px 8px 0;
+    }
+    @media only screen and (max-width: 960px) {
+      display: none;
     }
   }
   .top_end {
     @include flexMe;
+    a {
+      color: #213f7d;
+      @media only screen and (max-width: 1200px) {
+        display: none;
+      }
+    }
 
     gap: 1rem;
     .top_avatar {
       @include flexMe;
 
+      span {
+        color: #213f7d;
+        @media only screen and (max-width: 960px) {
+          display: none;
+        }
+      }
+
       gap: 1rem;
+
+      @media only screen and (max-width: 1200px) {
+        gap: 0.2rem;
+      }
     }
   }
 }
