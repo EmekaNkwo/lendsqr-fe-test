@@ -1,6 +1,6 @@
 import { Sidebar, Topbar } from "../../components";
 import { Outlet } from "react-router-dom";
-import "./main.css";
+import "./main.scss";
 
 export default function Main() {
   return (
@@ -9,12 +9,8 @@ export default function Main() {
         <Topbar />
       </div>
       <div className="dashboard_container">
-        <div className="dash_left">
-          <Sidebar />
-        </div>
-        <div className="dash_right">
-          <Outlet />
-        </div>
+        <Sidebar />
+        <Outlet />
       </div>
     </div>
   );

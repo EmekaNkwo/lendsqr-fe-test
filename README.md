@@ -1,10 +1,8 @@
-# LENDSQL FRONTEND ASSESSMENT
+# SIMPLE ADMIN APPLICATION
 
 ## Overview
 
 This is a Dashboard application that displays users and users details. The application is built using Typescript, React, SCSS and Redux and deployed to Heroku
-
-- I followed the design provided in the assessment using the atomic design pattern to complete the porject structure/architecture and the design system.
 
 ## Logs
 

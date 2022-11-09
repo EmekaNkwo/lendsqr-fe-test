@@ -9,8 +9,10 @@ import {
   users_savings,
 } from "../../assets";
 import { Card, LoadingSpinner } from "../../components";
+import { useMediaQuery } from "../../hooks";
+import { IUser } from "../../models";
 import { useGetUsersQuery } from "../../services/fetchUsers";
-import "./user.css";
+import "./user.scss";
 
 export default function User() {
   const userHeader = [
@@ -42,6 +44,8 @@ export default function User() {
 
   const [users, setUsers] = useState([]);
 
+  const isDesktop = useMediaQuery("(min-width: 1024px)");
+
   useEffect(() => {
     try {
       setUsers(usersList);
@@ -71,23 +75,12 @@ export default function User() {
     if (currentPage !== 1) setCurrentPage(currentPage - 1);
   };
 
-  interface UserProps {
-    id: number;
-    orgName: string;
-    userName: string;
-    email: string;
-    phoneNumber: number;
-    createdAt: string;
-    accountBalance: number;
-    accountNumber: string;
-    // loanRepayment: number;
-  }
   if (isFetching) return <LoadingSpinner />;
 
   return (
     <>
       <div className="user_container">
-        <h1 className="user_title">Users</h1>
+        <span className="user_title">Users</span>
 
         <div className="user_headers">
           {userHeader.map((item, index: number) => {
@@ -102,191 +95,129 @@ export default function User() {
           })}
         </div>
 
-        <div className="users_table">
-          <div
-            className="header_drop_menu"
-            style={{ display: dropDown ? "flex" : "none" }}
-          >
-            <div className="input_group">
-              <label htmlFor="organisation">Organisation</label>
-              <select name="" id="" className="input_field">
-                <option value="">Select</option>
-                <option value="">All</option>
-                <option value="">Active</option>
-                <option value="">Inactive</option>
-              </select>
-            </div>
-            <div className="input_group">
-              <label htmlFor="organisation">Username</label>
-              <input
-                type="text"
-                name=""
-                id=""
-                placeholder="User"
-                className="input_field"
-              />
-            </div>
-            <div className="input_group">
-              <label htmlFor="organisation">Email</label>
-              <input
-                type="text"
-                name=""
-                id=""
-                placeholder="Email"
-                className="input_field"
-              />
-            </div>
-            <div className="input_group">
-              <label htmlFor="organisation">Date</label>
-              <input
-                type="date"
-                name=""
-                id=""
-                placeholder="Date"
-                className="input_field"
-              />
-            </div>
-            <div className="input_group">
-              <label htmlFor="organisation">Phone Number</label>
-              <input
-                type="phone"
-                name=""
-                id=""
-                placeholder="Phone Number"
-                className="input_field"
-              />
-            </div>
-            <div className="input_group">
-              <label htmlFor="status">Status</label>
-              <select name="" id="" className="input_field">
-                <option value="">Select</option>
-                <option value="">All</option>
-                <option value="">Active</option>
-                <option value="">Inactive</option>
-              </select>
-            </div>
-            <div className="drop_buttons">
-              <button className="drop_button reset">Reset</button>
-              <button className="drop_button filter">Filter</button>
-            </div>
-          </div>
+        {isDesktop ? (
+          <div className="users_table">
+            <table>
+              <thead>
+                <tr>
+                  <th>
+                    ORGANZATION{" "}
+                    <img
+                      className="table_drop"
+                      src={table_drop}
+                      onClick={() => {
+                        dropDown ? setDropDown(false) : setDropDown(true);
+                      }}
+                      alt=""
+                    />
+                  </th>
+                  <th>
+                    USERNAME
+                    <img
+                      className="table_drop"
+                      src={table_drop}
+                      onClick={() => {
+                        dropDown ? setDropDown(false) : setDropDown(true);
+                      }}
+                      alt=""
+                    />
+                  </th>
+                  <th>
+                    EMAIL{" "}
+                    <img
+                      className="table_drop"
+                      src={table_drop}
+                      onClick={() => {
+                        dropDown ? setDropDown(false) : setDropDown(true);
+                      }}
+                      alt=""
+                    />
+                  </th>
+                  <th>
+                    PHONE NUMBER{" "}
+                    <img
+                      className="table_drop"
+                      src={table_drop}
+                      onClick={() => {
+                        dropDown ? setDropDown(false) : setDropDown(true);
+                      }}
+                      alt=""
+                    />
+                  </th>
+                  <th>
+                    DATE JOINED{" "}
+                    <img
+                      className="table_drop"
+                      src={table_drop}
+                      onClick={() => {
+                        dropDown ? setDropDown(false) : setDropDown(true);
+                      }}
+                      alt=""
+                    />
+                  </th>
 
-          <table>
-            <thead>
-              <tr>
-                <th>
-                  ORGANZATION{" "}
-                  <img
-                    className="table_drop"
-                    src={table_drop}
-                    onClick={() => {
-                      dropDown ? setDropDown(false) : setDropDown(true);
-                    }}
-                    alt=""
-                  />
-                </th>
-                <th>
-                  USERNAME{" "}
-                  <img
-                    className="table_drop"
-                    src={table_drop}
-                    onClick={() => {
-                      dropDown ? setDropDown(false) : setDropDown(true);
-                    }}
-                    alt=""
-                  />
-                </th>
-                <th>
-                  EMAIL{" "}
-                  <img
-                    className="table_drop"
-                    src={table_drop}
-                    onClick={() => {
-                      dropDown ? setDropDown(false) : setDropDown(true);
-                    }}
-                    alt=""
-                  />
-                </th>
-                <th>
-                  PHONE NUMBER{" "}
-                  <img
-                    className="table_drop"
-                    src={table_drop}
-                    onClick={() => {
-                      dropDown ? setDropDown(false) : setDropDown(true);
-                    }}
-                    alt=""
-                  />
-                </th>
-                <th>
-                  DATE JOINED{" "}
-                  <img
-                    className="table_drop"
-                    src={table_drop}
-                    onClick={() => {
-                      dropDown ? setDropDown(false) : setDropDown(true);
-                    }}
-                    alt=""
-                  />
-                </th>
+                  <th>ACTION</th>
+                </tr>
+              </thead>
+              <tbody>
+                {page?.map((user: IUser) => {
+                  return (
+                    <tr key={user.id}>
+                      <td>{user.orgName}</td>
+                      <td>{user.userName}</td>
+                      <td>{user.email}</td>
+                      <td>{user.phoneNumber}</td>
 
-                <th>Action</th>
-              </tr>
-            </thead>
-            <tbody>
-              {page?.map((user: UserProps) => {
-                return (
-                  <tr key={user.id}>
-                    <td>{user.orgName}</td>
-                    <td>{user.userName}</td>
-                    <td>{user.email}</td>
-                    <td>{user.phoneNumber}</td>
+                      <td>
+                        <Moment format="YYYY/MM/DD">{user.createdAt}</Moment>
+                      </td>
 
-                    <td>
-                      <Moment format="YYYY/MM/DD">{user.createdAt}</Moment>
-                    </td>
-
-                    <td>
-                      <Link to={`${user.id}`}>
-                        <button className="view_user">View User</button>
-                      </Link>
-                    </td>
-                  </tr>
-                );
-              })}
-            </tbody>
-          </table>
-          <div className="table_footer">
-            <div className="footer_left">
-              <span>Showing</span> <span>{currentPage}</span> <span>to</span>{" "}
-              <span>{count}</span> <span>of</span> <span>{page?.length}</span>{" "}
-            </div>
-            <div className="footer_right">
-              <div className="pagination">
-                <ul>
-                  <li className="paginate" onClick={prevPage}>
-                    <a href="#!">{"<"}</a>
-                  </li>
-                  {pageNumbers.map((number) => (
-                    <li
-                      key={number}
-                      className={`paginate ${
-                        currentPage === number ? "active" : ""
-                      }`}
-                    >
-                      <a onClick={() => setCurrentPage(number)} href="#!">
-                        {number}
-                      </a>
+                      <td>
+                        <Link to={`${user.id}`}>
+                          <button className="view_user">View User</button>
+                        </Link>
+                      </td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+            <div className="table_footer">
+              <div className="footer_left">
+                <span>Showing</span> <b>{currentPage}</b> <span>to</span>{" "}
+                <b>{count}</b> <span>of</span> <b>{page?.length}</b>{" "}
+              </div>
+              <div className="footer_right">
+                <div className="pagination">
+                  <ul>
+                    <li className="paginate" onClick={prevPage}>
+                      <a href="#!">{"<"}</a>
                     </li>
-                  ))}
-                  <li className="paginate" onClick={nextPage}>
-                    <a href="#!">{">"}</a>
-                  </li>
-                </ul>
+                    {pageNumbers.map((number) => (
+                      <li
+                        key={number}
+                        className={`paginate ${
+                          currentPage === number ? "active" : ""
+                        }`}
+                      >
+                        <a onClick={() => setCurrentPage(number)} href="#!">
+                          <b> {number}</b>
+                        </a>
+                      </li>
+                    ))}
+                    <li className="paginate" onClick={nextPage}>
+                      <a href="#!">{">"}</a>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
-        </div>
+        ) : (
+          <b className="mobile_response">
+            View Page on a Desktop Browser to view table
+          </b>
+        )}
       </div>
     </>
   );

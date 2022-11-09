@@ -4,7 +4,7 @@ import { back } from "../../assets";
 import { LoadingSpinner } from "../../components";
 
 import { useGetUserDetailsQuery } from "../../services/fetchUsers";
-import "./userDetails.css";
+import "./userDetails.scss";
 
 export default function UserDetails() {
   const { id } = useParams();

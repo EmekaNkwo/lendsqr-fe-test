@@ -6,24 +6,21 @@ import {
   SettingItems,
 } from "./SidebarItems";
 import { BsArrowBarRight, BsArrowBarLeft } from "react-icons/bs";
-import "./sidebar.css";
+import "./sidebar.scss";
 import { briefcase, side_drop } from "../../assets";
 import { NavLink } from "react-router-dom";
+import { ISideItem } from "../../models";
 
 export default function Sidebar() {
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => setIsOpen(!isOpen);
 
-  interface SideItemProps {
-    header: string;
-    name: string;
-    icon: any;
-    link: string;
-  }
-
   return (
     <>
-      <div className="sidebar" style={{ width: isOpen ? "300px" : "65px" }}>
+      <div
+        className="sidebar"
+        style={{ width: isOpen ? "300px" : "65px", transition: " all 0.3s" }}
+      >
         <div className="top_section">
           <div
             className="top_section_header"
@@ -47,7 +44,7 @@ export default function Sidebar() {
 
         <div className="links-items">
           <div className="links">
-            {TopItem.map((item: SideItemProps, index: number) => {
+            {TopItem.map((item: ISideItem, index: number) => {
               return (
                 <div className="link-item" key={index}>
                   <NavLink to={item.link} className="link-items">
@@ -65,7 +62,7 @@ export default function Sidebar() {
           </div>
 
           <div className="links">
-            {CustomerItems.map((item: SideItemProps, index: number) => {
+            {CustomerItems.map((item: ISideItem, index: number) => {
               return (
                 <div className="link-item" key={index}>
                   <h5 style={{ display: isOpen ? "block" : "none" }}>
@@ -85,7 +82,7 @@ export default function Sidebar() {
             })}
           </div>
           <div className="links">
-            {BusinessItems.map((item: SideItemProps, index: number) => {
+            {BusinessItems.map((item: ISideItem, index: number) => {
               return (
                 <div className="link-item" key={index}>
                   <h5 style={{ display: isOpen ? "block" : "none" }}>
@@ -105,7 +102,7 @@ export default function Sidebar() {
             })}
           </div>
           <div className="links active">
-            {SettingItems.map((item: SideItemProps, index: number) => {
+            {SettingItems.map((item: ISideItem, index: number) => {
               return (
                 <div className="link-item" key={index}>
                   <h5 style={{ display: isOpen ? "block" : "none" }}>

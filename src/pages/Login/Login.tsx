@@ -1,6 +1,6 @@
 import { Logo, Login_Img } from "../../assets";
 import { Form } from "../../components";
-import "./login.css";
+import "./login.scss";
 
 export default function Login() {
   return (

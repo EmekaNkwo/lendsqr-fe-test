@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import "./form.css";
+import "./form.scss";
 
 export default function Form() {
   const [email, setEmail] = useState("");

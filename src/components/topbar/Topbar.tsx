@@ -5,7 +5,7 @@ import {
   Notification,
   Search_icon,
 } from "../../assets";
-import "./topbar.css";
+import "./topbar.scss";
 
 export default function Topbar() {
   return (
