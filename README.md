@@ -1,6 +1,6 @@
 # LENDSQR FRONTEND ASSESSMENT
 
-## Overview [Live Demo](https://obiex-nkwo.netlify.app/home)
+## Overview [Live Demo](https://nkwo-emeka-lendsqr-fe-test.netlify.app/)
 
 This is a Dashboard App that fetches user data from a Mock API which displays users data in a table and a detailed view of the user.The Application was built using React,Vite, Redux Toolkit, Antd,SCSS, and Mock API
 
