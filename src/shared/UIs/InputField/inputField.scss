@@ -1,0 +1,37 @@
+.input_container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+  label {
+    font-size: 14px;
+    color: #545f7d;
+    font-weight: 500;
+  }
+  .inputField {
+    width: 100%;
+    padding: 10px;
+    outline: none;
+    color: #545f7d;
+  }
+}
+
+.select_container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+  label {
+    font-size: 14px;
+    color: #545f7d;
+  }
+  .selectField {
+    width: 100%;
+    padding: 10px;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #545f7d26;
+    background-color: transparent;
+    color: #545f7db4;
+  }
+}

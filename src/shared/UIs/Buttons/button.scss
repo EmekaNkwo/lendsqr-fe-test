@@ -1,0 +1,11 @@
+@import "../../scss/mixins.scss";
+
+.filledButton {
+  @include ButtonStyle;
+  border: none;
+}
+
+.outlinedButton {
+  @include ButtonStyle;
+  background-color: transparent;
+}

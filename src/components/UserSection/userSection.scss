@@ -1,0 +1,132 @@
+@import "../../shared/scss/mixins.scss";
+@import "../../shared/scss/variable";
+
+// WIDGET STYLING
+
+.widget {
+  @include FlexCol;
+  gap: 1rem;
+  border: 1px solid rgba(33, 63, 125, 0.06);
+  border-radius: 4px;
+  padding: 1.5rem;
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.04);
+  .widget_title {
+    color: $accent_color;
+    font-size: 14px;
+  }
+  .widget_value {
+    font-size: 24px;
+    font-weight: 600;
+    color: $main_color;
+  }
+}
+
+// TABLE STYLING
+
+.user_table {
+  width: 100%;
+
+  .user_table_box {
+    overflow-x: auto;
+    .user_table_container {
+      width: 100%;
+      border: 1px solid rgba(33, 63, 125, 0.06);
+      border-radius: 4px;
+      padding: 1.5rem;
+      box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.04);
+      font-family: "Work Sans", sans-serif;
+
+      tr {
+        th {
+          font-size: 12px;
+          font-weight: 600;
+          color: $accent_color;
+          padding: 1rem 8px;
+          text-align: left;
+          padding: 8px;
+          .filter_content {
+            @include FlexCol;
+            gap: 5px;
+          }
+          span {
+            display: flex;
+            gap: 10px;
+
+            .filter_icon {
+              cursor: pointer;
+            }
+          }
+        }
+      }
+      tbody {
+        tr {
+          td {
+            font-size: 14px;
+            font-weight: 400;
+            color: $accent_color;
+            padding: 1rem 8px;
+            border-bottom: 1px solid rgba(33, 63, 125, 0.1);
+            text-align: left;
+            .status {
+              padding: 0.6rem;
+              border-radius: 100px;
+            }
+          }
+          .action {
+            cursor: pointer;
+            .dropdown_label {
+              color: $accent_color;
+            }
+          }
+        }
+      }
+    }
+  }
+  .user_table_bottom {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: $accent_color;
+    font-size: 14px;
+    font-weight: 400;
+    .showing {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      .count_options {
+        padding: 8px;
+        background-color: rgba(33, 63, 125, 0.1);
+        border: none;
+        border-radius: 4px;
+      }
+    }
+    .icon {
+      margin-top: 4px;
+    }
+  }
+}
+
+// USER SECTION
+
+.user_section {
+  @include FlexCol;
+  gap: 1rem;
+  h3 {
+    @include pageHeaderStyling;
+  }
+  .widget_container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+
+    @media screen and (max-width: 1200px) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+    @media screen and (max-width: 768px) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+}

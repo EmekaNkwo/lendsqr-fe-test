@@ -1,0 +1,166 @@
+@import "../../shared/scss/mixins.scss";
+@import "../../shared/scss/variable.scss";
+
+.loginPage {
+  height: 100vh;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  font-family: "AvenirNext";
+  .login_mobile {
+    display: flex;
+    flex-direction: column;
+    .icon {
+      padding-top: 3rem;
+      @media screen and (min-width: 1300px) {
+        display: none;
+      }
+    }
+    .loginFormMobile {
+      @include FlexCol;
+      align-items: center;
+      gap: 2rem;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      .left_header {
+        @include FlexCol;
+        gap: 10px;
+        h2 {
+          font-size: 40px;
+          font-family: $bold_font;
+          color: $main_color;
+        }
+        span {
+          font-size: 20px;
+          color: $accent_color;
+          font-weight: 400;
+        }
+      }
+
+      .loginForm {
+        @include FlexCol;
+        width: 300px;
+        gap: 1.5rem;
+        .forgotPassword {
+          font-size: 12px;
+          font-family: $regular_font;
+          color: $secondary_color;
+          letter-spacing: 1px;
+        }
+
+        .loginButton {
+          background-color: $secondary_color;
+          color: $white_color;
+        }
+        .passwordField {
+          position: relative;
+          .showPassword {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            letter-spacing: 10%;
+            cursor: pointer;
+            transform: translateY(-50%);
+            font-size: 12px;
+            font-family: $regular_font;
+            color: $secondary_color;
+          }
+        }
+      }
+      @media screen and (min-width: 1300px) {
+        display: none;
+      }
+    }
+  }
+  .loginContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    flex: 1;
+    padding: 4rem;
+
+    @media screen and (max-width: 1300px) {
+      display: none;
+    }
+    .loginLeftSide {
+      @include FlexCol;
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      gap: 2rem;
+      .left_icon {
+        margin-bottom: 5rem;
+        margin-left: 2rem;
+      }
+      .left_image {
+        width: 800px;
+        height: 100%;
+        @media screen and (max-width: 1300px) {
+          display: none;
+        }
+      }
+    }
+    .loginRightSide {
+      @include FlexCol;
+      margin-left: 7rem;
+      justify-content: center;
+      flex: 1;
+      gap: 2rem;
+      .left_header {
+        @include FlexCol;
+        gap: 10px;
+
+        h2 {
+          font-size: 40px;
+          font-family: $bold_font;
+          color: $main_color;
+        }
+        span {
+          font-size: 20px;
+          color: $accent_color;
+          font-weight: 400;
+        }
+      }
+
+      .loginForm {
+        @include FlexCol;
+
+        width: 450px;
+        gap: 1.5rem;
+        .forgotPassword {
+          font-size: 12px;
+          font-family: $regular_font;
+          color: $secondary_color;
+          letter-spacing: 1px;
+        }
+
+        .loginButton {
+          background-color: $secondary_color;
+          color: $white_color;
+        }
+        .passwordField {
+          position: relative;
+          .showPassword {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            letter-spacing: 10%;
+            cursor: pointer;
+            transform: translateY(-50%);
+            font-size: 12px;
+            font-family: $regular_font;
+            color: $secondary_color;
+          }
+        }
+      }
+      @media screen and (max-width: 1200px) {
+        flex: 0;
+        align-items: center;
+        margin-left: 0;
+      }
+    }
+  }
+}

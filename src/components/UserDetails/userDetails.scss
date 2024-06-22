@@ -1,0 +1,173 @@
+@import "../../shared/scss/mixins.scss";
+@import "../../shared/scss/variable";
+
+// User Info
+
+.user_info_container {
+  @include FlexCol;
+  gap: 1rem;
+  background-color: $white_color;
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.04);
+  padding: 1.5rem;
+  border-radius: 4px;
+
+  .user_info {
+    @include FlexCol;
+    gap: 1.3rem;
+    h3 {
+      font-weight: 500;
+      font-size: 16px;
+      color: $main_color;
+    }
+    .user_info_content {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 2rem;
+      @include userInfoStyling;
+      @media screen and (max-width: 1200px) {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 3rem;
+      }
+      @media screen and (max-width: 768px) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      @media screen and (max-width: 500px) {
+        grid-template-columns: repeat(1, 1fr);
+      }
+    }
+  }
+  .user_info_secondary {
+    @include FlexCol;
+    gap: 1.3rem;
+    h3 {
+      font-weight: 500;
+      font-size: 16px;
+      color: $main_color;
+    }
+    .user_info_content {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      @include userInfoStyling;
+      @media screen and (max-width: 1200px) {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 3rem;
+      }
+      @media screen and (max-width: 768px) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      @media screen and (max-width: 500px) {
+        grid-template-columns: repeat(1, 1fr);
+      }
+    }
+  }
+}
+
+// User Details
+
+.user_details {
+  @include FlexCol;
+  gap: 2rem;
+
+  .user_details_header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    cursor: pointer;
+  }
+
+  .user_details_top {
+    @include FlexBetween;
+    @media screen and (max-width: 768px) {
+      @include FlexCol;
+      gap: 2rem;
+    }
+    h3 {
+      @include pageHeaderStyling;
+    }
+    .top_buttons {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+  }
+
+  .user_info_top {
+    background-color: $white_color;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.04);
+    padding: 1.5rem 1.5rem 0 1.5rem;
+    border-radius: 4px;
+
+    .user_content {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      @media screen and (max-width: 768px) {
+      }
+      @media screen and (max-width: 500px) {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+      }
+      .user_info_column {
+        @include FlexCol;
+        gap: 0.5rem;
+
+        .user_name,
+        .user_amount {
+          font-size: 22px;
+          font-weight: 500;
+          color: $main_color;
+        }
+
+        .user_account {
+          font-size: 12px;
+          font-weight: 400;
+          color: $main_color;
+        }
+
+        .user_bvn {
+          font-size: 14px;
+          color: $accent_color;
+          font-weight: 400;
+        }
+
+        .user_tier {
+          font-weight: 500;
+          font-size: 14px;
+          color: $accent_color;
+        }
+        .user_star {
+          width: 50px;
+        }
+      }
+      .user_divider {
+        width: 1px;
+        height: 4rem;
+        background-color: $accent_color;
+        opacity: 0.5;
+        margin: 0 1rem;
+        @media screen and (max-width: 768px) {
+          display: none;
+        }
+      }
+    }
+    .user_details_tabs {
+      @include FlexBetween;
+      overflow-x: auto;
+      gap: 1rem;
+      margin-top: 2rem;
+      .user_tab {
+        font-weight: 500;
+        font-size: 14px;
+        color: #000;
+        cursor: pointer;
+        padding: 0.5rem 1rem;
+        &.active_tab {
+          color: $secondary_color;
+          border-bottom: 2px solid $secondary_color;
+        }
+      }
+    }
+  }
+}

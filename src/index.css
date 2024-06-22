@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face{
+  font-family: "AvenirNext";
+  src:local("AvenirNext-Regular"),
+  url('./assets/fonts/AvenirNextLTPro-Regular.otf') format('opentype');
+
+}
+@font-face{
+  font-family: "AvenirNextBold";
+  src:local("AvenirNext-Bold"),
+  url('./assets/fonts/AvenirNextLTPro-Bold.otf') format('opentype');
+}
+
+
+.ant-pagination .ant-pagination-item-active{
+  border: none;
+  color: #545F7D;
+}

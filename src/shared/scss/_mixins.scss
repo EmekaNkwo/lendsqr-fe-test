@@ -1,0 +1,59 @@
+@mixin FlexCol {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin FlexBetween {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin ButtonStyle {
+  width: 100%;
+  min-width: fit-content;
+  height: 48px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 6px;
+  cursor: pointer;
+  letter-spacing: 1px;
+}
+
+@mixin SideBarFlexStyling {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.2rem;
+}
+
+@mixin pageHeaderStyling {
+  font-size: 24px;
+  font-weight: 500;
+  color: $main_color;
+}
+
+@mixin pageSubHeaderStyling {
+  font-size: 16px;
+  font-weight: 500;
+  color: $main_color;
+}
+
+@mixin userInfoStyling {
+  .details {
+    @include FlexCol;
+    gap: 0.7rem;
+    span {
+      font-weight: 400;
+      color: $accent_color;
+      font-size: 12px;
+    }
+    p {
+      font-weight: 500;
+      color: $accent_color;
+      font-size: 16px;
+      text-transform: capitalize;
+    }
+  }
+}

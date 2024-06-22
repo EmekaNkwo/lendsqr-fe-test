@@ -1,0 +1,23 @@
+.dashboardLayout {
+  display: flex;
+  flex-direction: column;
+  font-family: "Work Sans", sans-serif;
+
+  .dashboardContainer {
+    display: flex;
+    .left_dashboard {
+      @media screen and (max-width: 1200px) {
+        display: none;
+      }
+    }
+    .right_dashboard {
+      flex: 1;
+      padding: 1rem 3rem;
+      background-color: #fbfbfb;
+      width: 100%;
+      @media screen and (max-width: 1024px) {
+        padding: 2rem;
+      }
+    }
+  }
+}
