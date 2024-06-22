@@ -109,6 +109,12 @@
         grid-template-columns: repeat(2, 1fr);
         gap: 1rem;
       }
+      .user_avatar {
+        width: 7rem;
+        height: 7rem;
+        border-radius: 100px;
+        object-fit: cover;
+      }
       .user_info_column {
         @include FlexCol;
         gap: 0.5rem;

@@ -16,6 +16,7 @@ const UserDetailsContainer = () => {
     const handleTabClick = (tabName: string) => {
         setActiveTab(tabName);
     };
+
     return (
         <div className="user_details">
             <div className="user_details_header" onClick={() => navigate(-1)}>
@@ -31,7 +32,7 @@ const UserDetailsContainer = () => {
             </div>
             <div className="user_info_top">
                 <div className="user_content">
-                    <img src={UserAvatar} alt="user_avatar" />
+                    <img src={userData?.profile?.avatar ? userData?.profile?.avatar : UserAvatar} alt="user_avatar" className="user_avatar" />
                     <div className="user_info_column">
                         <span className="user_name">{userData?.profile?.firstName} {userData?.profile?.lastName}</span>
                         <p className="user_bvn">{userData?.profile?.bvn}</p>
